@@ -1,0 +1,192 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #ffffff;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgb(255, 255, 255) 50%, #97d5e0 100%);
+}
+
+header {
+    align-items: center;
+    background: #97d5e0;
+    backdrop-filter: blur(100px);
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    z-index: 999;
+}
+
+nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 30px;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    gap: 40px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    background: #97d5e0;
+    border-radius: 12px;
+    color: #000;
+    padding: 7px;
+    text-decoration: none;
+    transition: .4s;
+}
+
+nav ul li a:hover {
+    font-size: .9em;
+    padding: 9.4px;
+    box-shadow: 12px 8px 18px -8px rgba(0, 0, 0, 0.75) inset;
+    -webkit-box-shadow: 12px 8px 18px -8px rgba(0, 0, 0, 0.75) inset;
+    -moz-box-shadow: 12px 8px 18px -8px rgba(0, 0, 0, 0.75) inset;
+}
+
+.logo {
+    height: 50px;
+}
+
+/* untuk ukuran 600px */
+.nav-box {
+    align-items: center;
+    border-radius: 7px;
+    display: none;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    transition: transform 0.3 ease;
+}
+
+.nav-box.transform {
+    transform: rotate(90deg);
+}
+
+#nav-strip1,
+#nav-strip2,
+#nav-strip3 {
+    background: #ffff;
+    border-radius: 2px;
+    margin: 2px;
+    height: 4px;
+    width: 24px;
+}
+
+.dropleft {
+    margin-right: 70px;
+    right: 0;
+    display: flex;
+    gap: 15px;
+    background: #ffff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropleft a {
+    color: #97d5e0;
+    text-decoration: none;
+}
+
+.dropleft.show {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+/* untuk ukuran 600px */
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+.content h1 {
+    font-family: 'Goldman';
+    font-size: 2.6em;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    width: 100vw;
+    padding: 4vh 0;
+    margin-top: 20px;
+    gap: 12px;
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.box-content {
+    background: aliceblue;
+    box-shadow: 12px 13px 18px -8px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 12px 13px 18px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 12px 13px 18px -8px rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    height: 300px;
+    width: 300px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    scroll-snap-align: center;
+}
+
+.box-content.active {
+    background: red;
+    color: white;
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 600px) {
+    .logo {
+        height: 38px;
+    }
+
+    nav {
+        margin: 12px 20px;
+    }
+
+    .content h1 {
+        font-size: 1.6em;
+    }
+
+    .box-content {
+        height: 200px;
+        width: 200px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .nav-box {
+        display: flex;
+        flex-direction: column;
+    }
+}
