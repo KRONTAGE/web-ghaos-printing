@@ -15,6 +15,7 @@ header {
     display: flex;
     justify-content: center;
     position: fixed;
+    opacity: 0.5;
     width: 100vw;
     z-index: 999;
 }
