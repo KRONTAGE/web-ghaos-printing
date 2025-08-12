@@ -15,7 +15,6 @@ header {
     display: flex;
     justify-content: center;
     position: fixed;
-    opacity: 0.5;
     width: 100vw;
     z-index: 999;
 }
@@ -110,6 +109,7 @@ nav ul li a:hover {
 
 /* untuk ukuran 600px */
 
+/* Section Content */
 .content {
     display: flex;
     justify-content: center;
@@ -128,8 +128,8 @@ nav ul li a:hover {
     align-items: center;
     display: flex;
     width: 100vw;
-    padding: 4vh 0;
-    margin-top: 20px;
+    padding: 5vh 0;
+    margin-top: 30px;
     gap: 12px;
     overflow-x: auto;
 
@@ -146,23 +146,44 @@ nav ul li a:hover {
     -webkit-box-shadow: 12px 13px 18px -8px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 12px 13px 18px -8px rgba(0, 0, 0, 0.75);
     display: flex;
+    flex-direction: column;
     flex-shrink: 0;
     justify-content: center;
     align-items: center;
+    text-align: center;
     border-radius: 15px;
     height: 300px;
     width: 300px;
     transition: all 0.3s ease;
-    cursor: pointer;
 
     scroll-snap-align: center;
 }
 
 .box-content.active {
-    background: red;
-    color: white;
+    background-image: url(Assets/LogoGhaos-ContourBlack.png);
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: center;
+    background-blend-mode: soft-light;
+    color: rgb(250, 0, 0);
+    font-size: 2em;
     transform: scale(1.1);
 }
+
+.btn {
+    background-color: #0077b8;
+    border-radius: 8px;
+    display: none;
+    color: #ffffff;
+    padding: 7px 12px;
+    text-decoration: none;
+}
+
+.btn.show {
+    display: flex;
+    margin-top: 30px;
+}
+/* Content End */
 
 @media screen and (max-width: 600px) {
     .logo {
@@ -189,5 +210,9 @@ nav ul li a:hover {
     .nav-box {
         display: flex;
         flex-direction: column;
+    }
+
+    .box-content.active {
+        font-size: 1.5em;
     }
 }
