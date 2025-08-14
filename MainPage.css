@@ -5,12 +5,22 @@
 
 body {
     background: #ffffff;
-    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgb(255, 255, 255) 50%, #97d5e0 100%);
+}
+
+.bg {
+    background: #ffffff;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 67%, rgba(146, 219, 232, 1) 100%);
+    height: 100vh;
+    position: absolute;
+    width: 100vw;
+    z-index: -2;
 }
 
 header {
     align-items: center;
-    background: #97d5e0;
+    background-color: #97d5e0;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     backdrop-filter: blur(100px);
     display: flex;
     justify-content: center;
@@ -165,7 +175,10 @@ nav ul li a:hover {
     background-size: 200px;
     background-position: center;
     background-blend-mode: soft-light;
-    color: rgb(250, 0, 0);
+    box-shadow: 1px 1px 20px 2px rgba(255, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 1px 20px 2px rgba(255, 0, 0, 0.75);
+    -moz-box-shadow: 1px 1px 20px 2px rgba(255, 0, 0, 0.75);
+    color: red;
     font-size: 2em;
     transform: scale(1.1);
 }
@@ -184,6 +197,119 @@ nav ul li a:hover {
     margin-top: 30px;
 }
 /* Content End */
+
+/* Section LoginAs */
+.loginAs {
+    align-items: center;
+    background: rgba(146, 219, 232, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50vh;
+    width: 100vw;
+}
+
+.loginAs h1 {
+    font-family: 'Goldman';
+    font-size: 2em;
+    text-align: center;
+}
+
+.containerLogin {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    height: 60%;
+    margin-top: 16px;
+    width: 100vw;
+}
+
+.containerForm {
+    background-color: #ffffff;
+    box-shadow: 12px 13px 18px -8px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 12px 13px 18px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 12px 13px 18px -8px rgba(0, 0, 0, 0.75);
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    width: 27vw;
+}
+
+.form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    width: 80%;
+}
+
+.form h3 {
+    font-family: 'Goldman';
+    margin-bottom: 12px;
+    text-align: center;
+    width: 85%;
+}
+
+.form p {
+    text-align: center;
+}
+
+.form .submit, .form p {
+    margin-top: 8px;
+}
+
+.form span {
+    color: red;
+}
+
+.form input {
+    border: solid 2px;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 3px 0;
+    width: 86%;
+}
+
+.line {
+    display: flex;
+    background-color: #000;
+    border-radius: 12px;
+    height: 100%;
+    width: 10px;
+}
+
+.submit {
+    background-color: #0077b8;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 8px 12px;
+}
+
+/* LoginAs End */
+@media screen and (max-width: 850px) {
+    .loginAs {
+        height: 100vh;
+    }
+
+    .containerLogin {
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        height: 72%;
+    }
+
+    .containerForm {
+        width: 70%;
+    }
+
+    .line {
+        display: none;
+    }
+}
 
 @media screen and (max-width: 600px) {
     .logo {
